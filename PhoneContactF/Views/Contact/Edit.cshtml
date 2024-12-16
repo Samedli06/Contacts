@@ -1,0 +1,33 @@
+﻿@model ContactDto
+
+<div class="row">
+    <div class="col-md-8 mx-auto rounded border p-3">
+
+        <h2 class="text-center mb-5">Edit Contact</h2>
+
+        <form asp-action="Edit" method="post">
+            <input type="hidden" name="id" value="@ViewData["ContactId"]" />
+
+            <div class="row mb-3">
+                <label asp-for="Name" class="col-sm-4 col-form-label"></label>
+                <input asp-for="Name" />
+                <span asp-validation-for="Name"></span>
+            </div>
+            <div class="row mb-3">
+                <label asp-for="Surname" class="col-sm-4 col-form-label"></label>
+                <input asp-for="Surname" />
+                <span asp-validation-for="Surname"></span>
+            </div>
+            <div class="row mb-3">
+                <label asp-for="PhoneNumber" class="col-sm-4 col-form-label"></label>
+                <input asp-for="PhoneNumber" />
+                <span asp-validation-for="PhoneNumber"></span>
+            </div>
+            <button class="btn btn-primary" type="submit">Save</button>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}
